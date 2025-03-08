@@ -12,12 +12,18 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: oklch(0.13 0.028 261.692);
     --foreground: #ededed;
   }
 }
 
+html,
 body {
+  max-width: 100dvw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;

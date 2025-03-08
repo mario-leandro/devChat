@@ -1,13 +1,11 @@
-import Header from "@/components/Header";
+import Navigation from "@/components/Navigation";
 import Main from "@/components/Main";
-import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <>
-      <Header />
+    <div className="w-[70vw] h-[70vh] container flex justify-start items-start bg-slate-50">
+      <Navigation />
       <Main />
-      <Footer />
-    </>
+    </div>
   );
 }
