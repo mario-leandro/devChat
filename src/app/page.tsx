@@ -3,9 +3,11 @@ import Main from "@/components/Main";
 
 export default function Home() {
   return (
-    <div className="w-[70vw] h-[70vh] container flex justify-start items-start bg-slate-50">
-      <Navigation />
-      <Main />
-    </div>
+    <section className="w-dvw h-dvh display flex justify-center items-center">
+      <section className="w-7xl h-11/12 flex justify-start items-start bg-slate-900 rounded-2xl">
+        <Navigation />
+        <Main />
+      </section>
+    </section>
   );
 }

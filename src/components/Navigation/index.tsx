@@ -3,21 +3,21 @@ import userAvatar from "@/assets/user.svg";
 
 export default function Navigation() {
     return (
-        <aside className="w-96 h-full flex flex-col justify-start bg-slate-900">
-            <section className="w-full h-16 p-4 flex justify-start items-center">
-                <h1 className="text-2xl text-slate-50">Dev Chat</h1>
+        <aside className="min-w-96 h-full flex flex-col justify-start border-r-1 border-r-slate-700 py-0.5">
+            <section className="w-full h-20 px-4 flex justify-start items-center">
+                <p className="text-2xl font-semibold text-slate-50">Dev Chat</p>
             </section>
 
             <section className="w-full h-auto flex justify-center items-center p-4">
-                <input className="w-full h-9 text-base px-3 py-0.5 bg-slate-800 rounded-2xl outline-0" type="text" />   
+                <input className="w-full h-9 text-base px-3 py-0.5 bg-slate-800 rounded-2xl outline-0 cursor-text" type="text" />   
             </section>
 
             <section className="w-full h-full flex flex-col justify-start items-center p-4">
                 {/* Card with messages */}
-                <section className="w-full h-14 flex flex-row gap-2">
+                <section className="w-full h-16 flex flex-row gap-2 px-2.5 py-0.5 border-y-1 border-slate-700 cursor-pointer hover:bg-slate-700 transition-all ">
                     {/* Card image */}
                     <section className="w-10 h-full flex justify-center items-center">
-                        <Image className="w-full h-full" src={userAvatar} alt="user avatar svg" />
+                        <Image className="w-full h-full rounded-2xl" src={userAvatar} alt="user avatar svg" />
                     </section>
 
                     {/* Card Body */}
@@ -49,9 +49,9 @@ export default function Navigation() {
                             </section>
 
                             {/* count of unread message / notifications. */}
-                            <div className="w-auto h-full flex justify-center items-center">
+                            <section className="w-auto h-full flex justify-center items-center">
                                 <p className="w-5 text-xs text-center text-slate-50 bg-green-700 p-0.5 rounded-2xl">1</p>
-                            </div>
+                            </section>
                         </section>
                     </section>
                 </section>
