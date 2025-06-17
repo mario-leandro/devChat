@@ -1,74 +1,108 @@
-import Image from "next/image"
+import Image from "next/image";
 import userAvatar from "@/assets/user.svg";
 import plusIcon from "@/assets/plus.svg";
 import microphoneIcon from "@/assets/microphone.svg";
 import paperPlaneIcon from "@/assets/paperPlane.svg";
 
 export default function Main() {
-    return (
-        <main className="w-[calc(1280px-384px)] h-full flex flex-col">
-            {/* User info section */}
-            <section className="w-full h-18 bg-slate-800 flex flex-row justify-start items-center rounded-tr-2xl">
+  return (
+    <main className="w-[calc(1280px-384px)] h-full flex flex-col">
+      {/* User info section */}
+      <section className="w-full h-25 bg-slate-800 flex flex-row justify-start items-center rounded-tr-2xl">
+        {/* user avatar section */}
+        <section className="w-20 h-full flex justify-center items-center gap-2">
+          <Image
+            className="w-9 h-full rounded-2x fill-slate-300"
+            src={userAvatar}
+            alt="user avatar svg"
+          />
+          {/* User avatar */}
+        </section>
 
-                {/* user avatar section */}
-                <section className="w-20 h-full flex justify-center items-center gap-2">
-                    <Image className="w-9 h-full rounded-2x fill-slate-300" src={userAvatar} alt="user avatar svg" />
-                </section>
+        {/* name and time of the last message */}
+        <section className="w-auto h-full flex flex-col justify-center items-start">
+          {/* username section */}
+          <section className="w-auto h-auto flex justify-start items-center">
+            <span className="text-base text-slate-50">Mario Leandro</span>
+            {/* Username */}
+          </section>
 
-                {/* name and time of the last message */}
-                <section className="w-auto h-full flex flex-col justify-center items-start">
-                    {/* username */}
-                    <section className="w-auto h-auto flex justify-start items-center">
-                        <span className="text-base text-slate-50">Mario Leandro</span>
-                    </section>
+          {/* here is the status: last seen, online, typing  */}
+          <section className="w-auto h-auto flex justify-start items-center">
+            <span className="text-xs text-slate-50">
+              Visto por último hoje às 16:51
+            </span>
+            {/* Status */}
+            {/* <span>Online</span> */} {/* Online */}
+            {/* <span>Digitando...</span> */} {/* Typing */}
+          </section>
+        </section>
+      </section>
 
-                    {/*  */}
-                    <section className="w-auto h-auto flex justify-start items-center">
-                        <span className="text-xs text-slate-50">Visto por último hoje às 16:51</span>
-                        {/* <span>Online</span> */}
-                        {/* <span>Digitando...</span> */}
-                    </section>
-                </section>
+      {/* Here is the chat */}
+      <section className="w-full h-200/200 bg-slate-900 flex flex-row">
+        {/* 
+            Here we will do something like this:
+            Split the "chat" section  in 2 parts, the first will contain the user's messages on the right side.
+            The second part will be from the other user who will send a response on the left side.
+        */}
+
+        {/* I have 2 ideas */}
+        {/* 
+          First is create a section with a display grid and separate with columns and rows, but the messages will be side by side and not sequential like WhatsApp 
+
+            <section className="w-full h-full bg-slate-700 grid grid-cols-2 row-end-auto">
+                <span className="min-w-5 h-5 ml-3 mb-3 bg-slate-600 grid">Oi</span>
+                <span className="min-w-5 h-5 mr-3 mb-3 bg-slate-600 grid ">Olá</span>
+            </section> 
+        */}
+
+        {/* 
+          Second is create a separate sections using display grid with rows for make a sequential line to messages, this might work
+
+            <section className="w-[50%] h-full bg-slate-700 flex flex-col justify-end items-start">
+                <span className="min-w-5 h-5 ml-3 mb-3 bg-slate-600 ">Oi</span>
             </section>
 
-            <section className="w-full h-full bg-slate-200">
+            <section className="w-[50%] h-full bg-slate-400 flex flex-col justify-end items-end">
+                <span className="min-w-5 h-5 mr-3 mb-3 bg-slate-600 ">Olá</span>
+            </section> 
+        */}
+      </section>
 
-            </section>
+      <form className="w-full h-25 bg-slate-800 flex flex-row justify-center items-center rounded-br-2xl">
+        {/* Here will be button for send a image, document, file, or whatever */}
+        <section className="w-16 h-full flex justify-center items-center">
+          <button className="w-5 h-5 cursor-pointer flex justify-center items-center">
+            <Image className="w-full h-full" src={plusIcon} alt="plus icon" />
+          </button>
+        </section>
 
-            <section className="w-full h-20 bg-slate-800 flex flex-row justify-center items-center rounded-br-2xl">
-                {/* Here will be button for send a image, document, file, or whatever */}
-                <section className="w-16 h-full flex justify-center items-center">
-                    <button className="w-5 h-5 cursor-pointer flex justify-center items-center">
-                        <Image className="w-full h-full" src={plusIcon} alt="plus icon" />
-                    </button>
-                </section>
+        <section className="w-full h-full flex justify-center items-center">
+          <input
+            className="w-full h-12 text-base bg-slate-700 rounded-2xl outline-0 px-3 py-0.5 cursor-text"
+            type="text"
+          />
+        </section>
 
-                <section className="w-full h-full flex justify-center items-center">
-                    <input className="w-full h-[70%] text-base bg-slate-700 rounded-2xl outline-0 px-3 py-0.5 cursor-text" type="text" />
-                </section>
-
-                {/* Here will be button for record the audio */}
-                <section className="w-16 h-full flex justify-center items-center">
-                    <button className="w-5 h-5 cursor-pointer flex justify-center items-center">
-                        <Image className="w-full h-full" src={microphoneIcon} alt="microphone icon" />
-                    </button>
-                    <button className="w-5 h-5 cursor-pointer justify-center items-center hidden">
-                        <Image className="w-full h-full" src={paperPlaneIcon} alt="paper plane svg" />
-                    </button>
-                </section>
-            </section>
-        </main>
-    )
+        {/* Here will be button for record the audio */}
+        <section className="w-16 h-full flex justify-center items-center">
+          <button className="w-5 h-5 cursor-pointer flex justify-center items-center">
+            <Image
+              className="w-full h-full"
+              src={microphoneIcon}
+              alt="microphone icon"
+            />
+          </button>
+          <button className="w-5 h-5 cursor-pointer justify-center items-center hidden">
+            <Image
+              className="w-full h-full"
+              src={paperPlaneIcon}
+              alt="paper plane svg"
+            />
+          </button>
+        </section>
+      </form>
+    </main>
+  );
 }
-
-// Limit a size for display like a tablet 
-
-
-// Input logic to test
-/*
-    if(input == "") {
-        button = microphone icon
-    } else {
-        button = send message 
-    }
-*/
