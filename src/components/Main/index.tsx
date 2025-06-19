@@ -40,34 +40,28 @@ export default function Main() {
       </section>
 
       {/* Here is the chat */}
-      <section className="w-full h-200/200 bg-slate-900 flex flex-row">
+      <section className="w-full h-200/200 bg-slate-900 flex flex-col justify-end">
         {/* 
             Here we will do something like this:
             Split the "chat" section  in 2 parts, the first will contain the user's messages on the right side.
             The second part will be from the other user who will send a response on the left side.
         */}
 
-        {/* I have 2 ideas */}
         {/* 
-          First is create a section with a display grid and separate with columns and rows, but the messages will be side by side and not sequential like WhatsApp 
-
-            <section className="w-full h-full bg-slate-700 grid grid-cols-2 row-end-auto">
-                <span className="min-w-5 h-5 ml-3 mb-3 bg-slate-600 grid">Oi</span>
-                <span className="min-w-5 h-5 mr-3 mb-3 bg-slate-600 grid ">Olá</span>
-            </section> 
+          This section create a separate sections using display grid with rows for make a sequential line to messages, this might work
         */}
 
-        {/* 
-          Second is create a separate sections using display grid with rows for make a sequential line to messages, this might work
+        <section className="w-full h-min flex flex-col justify-end items-start">
+          <span className="min-w-10 min-h-10 ml-3 mb-3 flex justify-center items-center bg-slate-600 rounded-2xl">
+            <p>Oi</p>
+          </span>
+        </section>
 
-            <section className="w-[50%] h-full bg-slate-700 flex flex-col justify-end items-start">
-                <span className="min-w-5 h-5 ml-3 mb-3 bg-slate-600 ">Oi</span>
-            </section>
-
-            <section className="w-[50%] h-full bg-slate-400 flex flex-col justify-end items-end">
-                <span className="min-w-5 h-5 mr-3 mb-3 bg-slate-600 ">Olá</span>
-            </section> 
-        */}
+        <section className="w-full h-min flex flex-col justify-end items-end">
+          <span className="min-w-10 min-h-10 mr-3 mb-3 flex justify-center items-center bg-slate-600 rounded-2xl">
+            <p>Olá</p>
+          </span>
+        </section>
       </section>
 
       <form className="w-full h-25 bg-slate-800 flex flex-row justify-center items-center rounded-br-2xl">
@@ -87,6 +81,7 @@ export default function Main() {
 
         {/* Here will be button for record the audio */}
         <section className="w-16 h-full flex justify-center items-center">
+          {/* This button will have a function of recording audio for another user */}
           <button className="w-5 h-5 cursor-pointer flex justify-center items-center">
             <Image
               className="w-full h-full"
@@ -94,6 +89,8 @@ export default function Main() {
               alt="microphone icon"
             />
           </button>
+
+          {/* This button have a function  */}
           <button className="w-5 h-5 cursor-pointer justify-center items-center hidden">
             <Image
               className="w-full h-full"
