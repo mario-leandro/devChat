@@ -6,9 +6,9 @@ import paperPlaneIcon from "@/assets/paperPlane.svg";
 
 export default function Main() {
   return (
-    <main className="w-[calc(1280px-384px)] h-full flex flex-col">
+    <main className="w-[calc(100%-460px)] h-full flex flex-col">
       {/* User info section */}
-      <section className="w-full h-25 bg-slate-800 flex flex-row justify-start items-center rounded-tr-2xl">
+      <section className="w-full h-25 bg-slate-800 flex flex-row justify-start items-center">
         {/* user avatar section */}
         <section className="w-20 h-full flex justify-center items-center gap-2">
           <Image
@@ -40,7 +40,7 @@ export default function Main() {
       </section>
 
       {/* Here is the chat */}
-      <section className="w-full h-200/200 bg-slate-900 flex flex-col justify-end">
+      <section className="w-full h-200/200 bg-slate-900 flex flex-col justify-end px-5 py-2">
         {/* 
             Here we will do something like this:
             Split the "chat" section  in 2 parts, the first will contain the user's messages on the right side.
@@ -51,14 +51,20 @@ export default function Main() {
           This section create a separate sections using display grid with rows for make a sequential line to messages, this might work
         */}
 
+        {/* 
+          Received messages will be on the left side
+        */}
         <section className="w-full h-min flex flex-col justify-end items-start">
-          <span className="min-w-10 min-h-10 ml-3 mb-3 flex justify-center items-center bg-slate-600 rounded-2xl">
+          <span className="min-w-10 min-h-10 mb-3 flex justify-center items-center bg-slate-600 rounded-2xl">
             <p>Oi</p>
           </span>
         </section>
 
+        {/* 
+          Sent messages will be on the right side
+        */}
         <section className="w-full h-min flex flex-col justify-end items-end">
-          <span className="min-w-10 min-h-10 mr-3 mb-3 flex justify-center items-center bg-slate-600 rounded-2xl">
+          <span className="min-w-10 min-h-10 mb-3 flex justify-center items-center bg-slate-600 rounded-2xl">
             <p>Olá</p>
           </span>
         </section>
@@ -76,6 +82,10 @@ export default function Main() {
           <input
             className="w-full h-12 text-base bg-slate-700 rounded-2xl outline-0 px-3 py-0.5 cursor-text"
             type="text"
+            autoComplete="off"
+            placeholder="Digite uma mensagem"
+            name="message"
+            id="message"
           />
         </section>
 

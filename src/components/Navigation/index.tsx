@@ -3,7 +3,7 @@ import userAvatar from "@/assets/user.svg";
 
 export default function Navigation() {
   return (
-    <aside className="min-w-96 h-full flex flex-col justify-start border-r-1 border-r-slate-700 py-0.5">
+    <aside className="w-[460px] h-full flex flex-col justify-start border-r-1 border-r-slate-700 py-0.5">
       <section className="w-full min-h-20 px-4 flex justify-start items-center">
         <p className="text-2xl font-semibold text-slate-50">Dev Chat</p>
       </section>
