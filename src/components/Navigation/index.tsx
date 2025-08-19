@@ -1,11 +1,28 @@
-import Image from "next/image";
-import userAvatar from "@/assets/user.svg";
+"use client";
+import { Settings, User } from "lucide-react";
+import UserConfigDrop from "@/components/UserConfigDrop";
+import { useState } from "react";
 
 export default function Navigation() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClickOutside = () => {
+    setIsOpen(false);
+  };
+
   return (
     <aside className="w-[460px] h-full flex flex-col justify-start border-r-1 border-r-slate-700 py-0.5">
-      <section className="w-full min-h-20 px-4 flex justify-start items-center">
+      <section className="w-full min-h-20 px-4 flex justify-start items-center relative">
         <p className="text-2xl font-semibold text-slate-50">Dev Chat</p>
+
+        <button 
+          className="ml-auto text-slate-50 cursor-pointer hover:text-slate-300 transition-all"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <Settings />
+        </button>
+
+        <UserConfigDrop isOpen={isOpen} onClickOutside={handleClickOutside} />
       </section>
 
       <section className="w-full h-auto flex justify-center items-center px-4">
@@ -20,11 +37,7 @@ export default function Navigation() {
         <section className="w-full h-16 flex flex-row gap-2 px-2.5 py-0.5 border-y-1 border-slate-700 cursor-pointer hover:bg-slate-700 transition-all ">
           {/* Card image */}
           <section className="w-10 h-full flex justify-center items-center">
-            <Image
-              className="w-full h-full rounded-2xl"
-              src={userAvatar}
-              alt="user avatar svg"
-            />
+            <User className="w-8 h-8 text-slate-400" />
           </section>
 
           {/* Card Body */}
