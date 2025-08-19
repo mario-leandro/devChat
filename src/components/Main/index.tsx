@@ -1,8 +1,4 @@
-import Image from "next/image";
-import userAvatar from "@/assets/user.svg";
-import plusIcon from "@/assets/plus.svg";
-import microphoneIcon from "@/assets/microphone.svg";
-import paperPlaneIcon from "@/assets/paperPlane.svg";
+import { Mic, Plus, SendHorizonal, User } from "lucide-react";
 
 export default function Main() {
   return (
@@ -11,11 +7,7 @@ export default function Main() {
       <section className="w-full h-25 bg-slate-800 flex flex-row justify-start items-center">
         {/* user avatar section */}
         <section className="w-20 h-full flex justify-center items-center gap-2">
-          <Image
-            className="w-9 h-full rounded-2x fill-slate-300"
-            src={userAvatar}
-            alt="user avatar svg"
-          />
+          <User className="w-9 h-full text-slate-400" />
           {/* User avatar */}
         </section>
 
@@ -73,8 +65,8 @@ export default function Main() {
       <form className="w-full h-25 bg-slate-800 flex flex-row justify-center items-center rounded-br-2xl">
         {/* Here will be button for send a image, document, file, or whatever */}
         <section className="w-16 h-full flex justify-center items-center">
-          <button className="w-5 h-5 cursor-pointer flex justify-center items-center">
-            <Image className="w-full h-full" src={plusIcon} alt="plus icon" />
+          <button className="size-10 cursor-pointer flex justify-center items-center hover:">
+            <Plus width={50} />
           </button>
         </section>
 
@@ -92,21 +84,13 @@ export default function Main() {
         {/* Here will be button for record the audio */}
         <section className="w-16 h-full flex justify-center items-center">
           {/* This button will have a function of recording audio for another user */}
-          <button className="w-5 h-5 cursor-pointer flex justify-center items-center">
-            <Image
-              className="w-full h-full"
-              src={microphoneIcon}
-              alt="microphone icon"
-            />
+          <button className="size-10 cursor-pointer justify-center items-center hidden">
+            <Mic  />
           </button>
 
           {/* This button have a function  */}
-          <button className="w-5 h-5 cursor-pointer justify-center items-center hidden">
-            <Image
-              className="w-full h-full"
-              src={paperPlaneIcon}
-              alt="paper plane svg"
-            />
+          <button className="size-10 cursor-pointer flex justify-center items-center bg-green-500 rounded-full hover:bg-green-600">
+            <SendHorizonal />
           </button>
         </section>
       </form>
