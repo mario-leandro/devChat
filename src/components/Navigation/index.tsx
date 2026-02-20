@@ -1,5 +1,5 @@
 "use client";
-import { Settings, User } from "lucide-react";
+import { Search, Settings, User } from "lucide-react";
 import UserConfigDrop from "@/components/UserConfigDrop";
 import { useState } from "react";
 
@@ -11,11 +11,11 @@ export default function Navigation() {
   };
 
   return (
-    <aside className="w-[460px] h-full flex flex-col justify-start border-r-1 border-r-slate-700 py-0.5">
+    <aside className="w-full h-full sm:flex hidden flex-col justify-start border-r-1 border-r-slate-700 py-0.5">
       <section className="w-full min-h-20 px-4 flex justify-start items-center relative">
         <p className="text-2xl font-semibold text-slate-50">Dev Chat</p>
 
-        <button 
+        <button
           className="ml-auto text-slate-50 cursor-pointer hover:text-slate-300 transition-all"
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -26,10 +26,14 @@ export default function Navigation() {
       </section>
 
       <section className="w-full h-auto flex justify-center items-center px-4">
-        <input
-          className="w-full h-9 text-base px-3 py-0.5 bg-slate-800 rounded-2xl outline-0 cursor-text"
-          type="text"
-        />
+        <div className="w-full flex flex-row items-center bg-slate-800 px-3 py-0.5 rounded-2xl gap-2">
+          <Search size={24} />
+          <input
+            className="w-full h-9 text-base outline-0 cursor-text"
+            type="text"
+            placeholder="Pesquisar..."
+          />
+        </div>
       </section>
 
       <section className="w-full h-full flex flex-col justify-start items-center p-4">
@@ -47,7 +51,7 @@ export default function Navigation() {
             The first section will have the username and the second part will be the Time or Date of the last message.
             The second section will have the last message and a notification count of the unread messages.
           */}
-          
+
           <section className="w-full h-full flex flex-col justify-start items-center">
             {/* Card top */}
             <section className="w-full h-[50%] card-body-top flex flex-row justify-between items-center">

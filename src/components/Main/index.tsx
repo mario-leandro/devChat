@@ -2,7 +2,7 @@ import { Mic, Plus, SendHorizonal, User } from "lucide-react";
 
 export default function Main() {
   return (
-    <main className="w-[calc(100%-460px)] h-full flex flex-col">
+    <main className="w-full h-full flex flex-col">
       {/* User info section */}
       <section className="w-full h-25 bg-slate-800 flex flex-row justify-start items-center">
         {/* user avatar section */}
@@ -62,7 +62,7 @@ export default function Main() {
         </section>
       </section>
 
-      <form className="w-full h-25 bg-slate-800 flex flex-row justify-center items-center rounded-br-2xl">
+      <form className="w-full h-25 bg-slate-800 flex flex-row justify-center items-center">
         {/* Here will be button for send a image, document, file, or whatever */}
         <section className="w-16 h-full flex justify-center items-center">
           <button className="size-10 cursor-pointer flex justify-center items-center hover:">
@@ -85,7 +85,7 @@ export default function Main() {
         <section className="w-16 h-full flex justify-center items-center">
           {/* This button will have a function of recording audio for another user */}
           <button className="size-10 cursor-pointer justify-center items-center hidden">
-            <Mic  />
+            <Mic />
           </button>
 
           {/* This button have a function  */}
