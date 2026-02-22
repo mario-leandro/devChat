@@ -1,4 +1,18 @@
 import { Mic, Plus, SendHorizonal, User } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuPortal,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export default function Main() {
   return (
@@ -65,9 +79,21 @@ export default function Main() {
       <form className="w-full h-25 bg-slate-800 flex flex-row justify-center items-center">
         {/* Here will be button for send a image, document, file, or whatever */}
         <section className="w-16 h-full flex justify-center items-center">
-          <button className="size-10 cursor-pointer flex justify-center items-center hover:">
-            <Plus width={50} />
-          </button>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button className="size-10 cursor-pointer flex justify-center items-center hover:bg-slate-700 rounded-full transition-all outline-0">
+                <Plus width={50} />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-40" align="start">
+              <DropdownMenuGroup>
+                <DropdownMenuLabel>Anexar</DropdownMenuLabel>
+                <DropdownMenuItem>Documentos</DropdownMenuItem>
+                <DropdownMenuItem>Fotos</DropdownMenuItem>
+                <DropdownMenuItem>Áudio</DropdownMenuItem>
+              </DropdownMenuGroup>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </section>
 
         <section className="w-full h-full flex justify-center items-center">
