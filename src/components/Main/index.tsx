@@ -82,12 +82,11 @@ export default function Main() {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <button className="size-10 cursor-pointer flex justify-center items-center hover:bg-slate-700 rounded-full transition-all outline-0">
-                <Plus width={50} />
+                <Plus width={50} color="#fff" />
               </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-40" align="start">
               <DropdownMenuGroup>
-                <DropdownMenuLabel>Anexar</DropdownMenuLabel>
                 <DropdownMenuItem>Documentos</DropdownMenuItem>
                 <DropdownMenuItem>Fotos</DropdownMenuItem>
                 <DropdownMenuItem>Áudio</DropdownMenuItem>
@@ -98,7 +97,7 @@ export default function Main() {
 
         <section className="w-full h-full flex justify-center items-center">
           <input
-            className="w-full h-12 text-base bg-slate-700 rounded-2xl outline-0 px-3 py-0.5 cursor-text"
+            className="w-full h-12 text-base bg-slate-700 text-white placeholder:text-slate-400 rounded-2xl outline-0 px-3 py-0.5 cursor-text"
             type="text"
             autoComplete="off"
             placeholder="Digite uma mensagem"
@@ -111,7 +110,7 @@ export default function Main() {
         <section className="w-16 h-full flex justify-center items-center">
           {/* This button will have a function of recording audio for another user */}
           <button className="size-10 cursor-pointer justify-center items-center hidden">
-            <Mic />
+            <Mic color="#fff" />
           </button>
 
           {/* This button have a function  */}
