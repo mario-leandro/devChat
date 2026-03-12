@@ -47,12 +47,6 @@ body {
   overflow-x: hidden;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);

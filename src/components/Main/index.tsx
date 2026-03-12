@@ -4,13 +4,6 @@ import {
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuPortal,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
@@ -29,8 +22,8 @@ export default function Main() {
         <section className="w-auto h-full flex flex-col justify-center items-start">
           {/* username section */}
           <section className="w-auto h-auto flex justify-start items-center">
-            <span className="text-base text-slate-50">Mario Leandro</span>
             {/* Username */}
+            <span className="text-base text-slate-50">Mario Leandro</span>
           </section>
 
           {/* here is the status: last seen, online, typing  */}
@@ -62,7 +55,7 @@ export default function Main() {
         */}
         <section className="w-full h-min flex flex-col justify-end items-start">
           <span className="min-w-10 min-h-10 mb-3 flex justify-center items-center bg-slate-600 rounded-2xl">
-            <p>Oi</p>
+            <p className="text-white">Oi</p>
           </span>
         </section>
 
@@ -71,7 +64,7 @@ export default function Main() {
         */}
         <section className="w-full h-min flex flex-col justify-end items-end">
           <span className="min-w-10 min-h-10 mb-3 flex justify-center items-center bg-slate-600 rounded-2xl">
-            <p>Olá</p>
+            <p className="text-white">Olá</p>
           </span>
         </section>
       </section>
@@ -85,7 +78,10 @@ export default function Main() {
                 <Plus width={50} color="#fff" />
               </button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-40" align="start">
+            <DropdownMenuContent
+              className="w-40 bg-slate-700 text-white border-0"
+              align="start"
+            >
               <DropdownMenuGroup>
                 <DropdownMenuItem>Documentos</DropdownMenuItem>
                 <DropdownMenuItem>Fotos</DropdownMenuItem>
@@ -114,7 +110,10 @@ export default function Main() {
           </button>
 
           {/* This button have a function  */}
-          <button className="size-10 cursor-pointer flex justify-center items-center bg-green-500 rounded-full hover:bg-green-600">
+          <button
+            type="submit"
+            className="size-10 cursor-pointer flex justify-center items-center bg-green-500 rounded-full hover:bg-green-600"
+          >
             <SendHorizonal />
           </button>
         </section>

@@ -27,9 +27,9 @@ export default function Navigation() {
 
       <section className="w-full h-auto flex justify-center items-center px-4">
         <div className="w-full flex flex-row items-center bg-slate-800 px-3 py-0.5 rounded-2xl gap-2">
-          <Search size={24} />
+          <Search size={24} color="#fff" />
           <input
-            className="w-full h-9 text-base outline-0 cursor-text"
+            className="w-full h-9 text-base text-white outline-0 cursor-text placeholder:text-slate-400"
             type="text"
             placeholder="Pesquisar..."
           />
